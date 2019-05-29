@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Assignment 1.1.5</title>
+    </head>
+    <body>
+        <h1>Enter the name of the site!</h1>
+        <input type="text" name="site" id="site_name"><br>
+        ENTER HEIGHT:<input type="number" id="height"><br>
+        ENTER WIDTH:<input type="number" id="width"><br>
+        
+        <input type="button" value="Go" onclick="display()">
+        <!-- <p id="ff"></p> -->
+        <div id="display"></div>
+        <!-- <center><iframe name="sub" src="https://www.wikipedia.org" height="50%" width="75%" ></iframe></center> -->
+        <script>
+            function display(){
+                var site=document.getElementById("site_name").value;
+                var height=document.getElementById("height").value;
+                var width=document.getElementById("width").value;
+                //var ff=document.getElementById("ff");
+                //ff.innerHTML=site;
+                var site_display=document.createElement("iframe");
+                //site_display.setAttribute("align", "center");
+                site_display.setAttribute("height", height+"%");
+                site_display.setAttribute("width", width+"%");
+                site_display.setAttribute("src", site);
+                var display=document.getElementById("display");
+                display.appendChild(site_display);
+            }
+        </script>
+    </body>
+</html>
